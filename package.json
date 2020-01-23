@@ -9,8 +9,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "release": "standard-version",
-    "precommit": "npm run lint",
-    "commitmsg": "commitlint -e $GIT_PARAMS",
     "debug": "env | grep PREFIX"
   },
   "private": true,
@@ -51,5 +49,11 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run lint"
+    }
   }
 }
