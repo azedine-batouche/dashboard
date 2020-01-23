@@ -8,8 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "precommit": "npm run lint && npm test",
-    "prepush": "npm run lint"
+    "release": "standard-version",
+    "precommit": "npm run lint",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "debug": "env | grep PREFIX"
   },
   "private": true,
   "dependencies": {
