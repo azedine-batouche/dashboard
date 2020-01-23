@@ -8,8 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "pre-commit": "npm run lint",
-    "commitmsg": "commitlint -E GIT_PARAMS"
+    "precommit": "npm run lint && npm test",
+    "prepush": "npm run lint"
   },
   "private": true,
   "dependencies": {
