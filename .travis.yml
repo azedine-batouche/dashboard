@@ -1,5 +1,6 @@
-dist: trusty
 sudo: false
+dist: trusty
+
 
 language: node_js
 node_js:
@@ -7,11 +8,7 @@ node_js:
 
 
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+    chrome: stable
 
 cache:
   directories:
