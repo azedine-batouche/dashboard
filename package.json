@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test --watch=false --progress=false --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
-    "e2e": "ng e2e --protractor-config=./e2e/protractor-ci.conf.js"
+    "e2e": "ng e2e --protractor-config=./e2e/protractor-ci.conf.js",
+    "test:cover":"rm rf- ./coverage/lcov.info && ng test --no-watch --code-coverage",
+    "coveralls":"cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
     
      },
   "private": true,
