@@ -1,6 +1,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/batouche-dev/dashboard/badge.svg?branch=master)](https://coveralls.io/github/batouche-dev/dashboard?branch=master)
 [![Build Status](https://travis-ci.org/batouche-dev/dashboard.svg?branch=master)](https://travis-ci.org/batouche-dev/dashboard)
+
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/100efa0c79134cdfa784e66845250220)](https://www.codacy.com/manual/batouche-dev/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=batouche-dev/dashboard&amp;utm_campaign=Badge_Grade)
+
 [![Known Vulnerabilities](https://snyk.io/test/npm/markdown-it/10.0.0/badge.svg)](https://snyk.io/test/npm/markdown-it/10.0.0)
 # Dashboard
 
