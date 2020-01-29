@@ -32,7 +32,7 @@ deploy:
   keep_history: true
   local_dir: gh-pages
   on:
-    all_branches: true
+     all_branches: true
  
 
     
