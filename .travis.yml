@@ -24,7 +24,7 @@ after_success:
    - npm run coveralls
 
 before_deploy: 
-   - npm run build:gh-pages:test1
+  - npm run build:gh-pages:test1
 
 
 deploy:
