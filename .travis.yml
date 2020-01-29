@@ -16,9 +16,10 @@ install:
   - npm install
 
 script:
-  - npm run test:cover -- --watch=false --progress=false --browsers=ChromeHeadlessCI
-  - npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
-  - npm run e2e -- --protractor-config=./e2e/protractor-ci.conf.js
+  - npm run test:cover -- --single-run --no-progress --browser=ChromeNoSandbox
+  - npm run test --  --single-run --no-progres --browser=ChromeNoSandbox
+  - npm run e2e -- --no-progress -config=./e2e/protractor-ci.conf.js
+
 
 after_success:
    - npm run coveralls
@@ -29,7 +30,7 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep_history: true
-  local-dir: gh-pages
+  local_dir: gh-pages
   on:
     branch: feat/gh-pages-with-travis  
 
