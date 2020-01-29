@@ -1,6 +1,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/batouche-dev/dashboard/badge.svg?branch=master)](https://coveralls.io/github/batouche-dev/dashboard?branch=master)
 [![Build Status](https://travis-ci.org/batouche-dev/dashboard.svg?branch=master)](https://travis-ci.org/batouche-dev/dashboard)
-
+[![Known Vulnerabilities](https://snyk.io/test/npm/markdown-it/10.0.0/badge.svg)](https://snyk.io/test/npm/markdown-it/10.0.0)
 # Dashboard
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
