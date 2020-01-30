@@ -97,6 +97,9 @@
           "configurations": {
             "production": {
               "browserTarget": "dashboard:build:production"
+            },
+            "test": {
+              "browserTarget": "dashboard:build:test"
             }
           }
         },
