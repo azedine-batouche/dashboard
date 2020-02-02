@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test --watch=false --progress=false --browsers=ChromeHeadlessCI",
+    "test": "ng test --watch=false --progress=false ",
     "lint": "ng lint",
     "e2e": "ng e2e --protractor-config=./e2e/protractor-ci.conf.js",
     "test:cover": "rm -rf ./coverage && ng test --no-watch --code-coverage",
@@ -58,7 +58,8 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.5.3",
+    "autoprefixer" : "^ 6.5.4 "
   },
   "husky": {
     "hooks": {
