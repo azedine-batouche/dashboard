@@ -1,5 +1,9 @@
 @import "../sass/variables";
+@import "../../node_modules/bourbon/core/bourbon";
 
 h1 {
-    color: $h1-color;
+    color: $text-default-color;
+}
+h2 {
+    @include ellipsis;
 }
