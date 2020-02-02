@@ -1,10 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./variables";
 @import "../../node_modules/bourbon/core/bourbon";
-@import "./bootstrap-custom";
-
-body, html {
-    background-color: $bg-color;
-    font-family: $font-stack-verdana;
-    color: $text-default-color;
-}
+@import "./bootstrap-tools";
