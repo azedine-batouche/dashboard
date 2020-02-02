@@ -26,7 +26,6 @@
     "bootstrap": "^4.4.1",
     "bourbon": "^6.0.0",
     "jquery": "^3.4.1",
-    "popper": "^1.0.1",
     "popper.js": "^1.16.1",
     "rxjs": "~6.4.0",
     "serialize-javascript": "^2.1.2",
@@ -59,7 +58,7 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3",
-    "autoprefixer" : "^ 6.5.4 "
+    "autoprefixer": "^ 6.5.4 "
   },
   "husky": {
     "hooks": {
