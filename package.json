@@ -12,7 +12,7 @@
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build:gh-pages:test1": "ng build -c=test --output-path=gh-pages/test1/ --base-href=/dashboard/test1/",
     "pwa": "http-server ./gh-pages/test1 -p 9005"
-     },
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.0",
@@ -23,7 +23,11 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
+    "bootstrap": "^4.4.1",
     "bourbon": "^6.0.0",
+    "jquery": "^3.4.1",
+    "popper": "^1.0.1",
+    "popper.js": "^1.16.1",
     "rxjs": "~6.4.0",
     "serialize-javascript": "^2.1.2",
     "tslib": "^1.10.0",
