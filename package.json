@@ -8,9 +8,12 @@
     "test": "ng test --watch=false --progress=false ",
     "lint": "ng lint",
     "e2e": "ng e2e --protractor-config=./e2e/protractor-ci.conf.js",
+    "prettier": "prettier --write '**/*.{ts,scss,md}'",
+    "cc": "npm run prettier &&  npm run lint",
     "test:cover": "rm -rf ./coverage && ng test --no-watch --code-coverage",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build:gh-pages:test1": "ng build -c=test --output-path=gh-pages/test1/ --base-href=/dashboard/test1/",
+    "pretty-quick": "pretty-quick",
     "pwa": "http-server ./gh-pages/test1 -p 9005"
   },
   "private": true,
@@ -25,6 +28,7 @@
     "@angular/router": "~8.2.0",
     "bootstrap": "^4.4.1",
     "bourbon": "^6.0.0",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
     "rxjs": "~6.4.0",
@@ -42,6 +46,7 @@
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "autoprefixer": "^ 6.5.4 ",
     "codelyzer": "^5.0.0",
     "coveralls": "^3.0.9",
     "husky": "^4.2.0",
@@ -53,17 +58,17 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
     "lint-staged": "^10.0.2",
-    "prettier": "^1.19.1",
+    "prettier": "1.19.1",
+    "pretty-quick": "^2.0.1",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3",
-    "autoprefixer": "^ 6.5.4 "
+    "typescript": "~3.5.3"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run pretty-quick --staged && npm run lint"
     }
   }
 }
