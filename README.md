@@ -1,9 +1,10 @@
 [![Coverage Status](https://coveralls.io/repos/github/batouche-dev/dashboard/badge.svg?branch=master)](https://coveralls.io/github/batouche-dev/dashboard?branch=master)
 [![Build Status](https://travis-ci.org/batouche-dev/dashboard.svg?branch=master)](https://travis-ci.org/batouche-dev/dashboard)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/100efa0c79134cdfa784e66845250220)](https://www.codacy.com/manual/batouche-dev/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=batouche-dev/dashboard&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/100efa0c79134cdfa784e66845250220)](https://www.codacy.com/manual/batouche-dev/dashboard?utm_source=github.com&utm_medium=referral&utm_content=batouche-dev/dashboard&utm_campaign=Badge_Grade)
 
 [![Known Vulnerabilities](https://snyk.io/test/npm/markdown-it/10.0.0/badge.svg)](https://snyk.io/test/npm/markdown-it/10.0.0)
+
 # Dashboard
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
@@ -21,6 +22,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
+
 https://github.com/batouche-dev/dashboard.git
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
