@@ -1,14 +1,6 @@
 @import '../sass/tools.scss';
 
-// h1 {
-//     color: $info;
-// }
-// h2 {
-//     @include ellipsis;
-//     color: $warning;
-// }
-
-// a{
-//     color: $danger;
-// }
-
+:host {
+  width: 100vw;
+  height: 100vh;
+}
