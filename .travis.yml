@@ -15,7 +15,6 @@ cache:
 install:
   - npm install
 
-
 after_success:
   - npm run coveralls
   - export NODE_ENV=test && npm run build:gh-pages:test1
