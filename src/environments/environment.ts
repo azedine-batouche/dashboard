@@ -1,16 +1,24 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+import { DashboardConfig } from 'src/app/dashboard/interfaces/dashboard-config';
 
-export const environment = {
-  production: false
+const dashboardConfig: DashboardConfig = {
+  items: [
+    { cols: 1, rows: 2, y: 0, x: 0, widget: { icon: null, class: 'bg-primary' } },
+    { cols: 1, rows: 1, y: 0, x: 0, widget: { icon: null, class: null } },
+    { cols: 1, rows: 1, y: 0, x: 0, widget: { icon: null, class: 'bg-success' } },
+    { cols: 1, rows: 1, y: 0, x: 0, widget: { icon: null, class: null } },
+    { cols: 1, rows: 1, y: 0, x: 0, widget: { icon: null, class: 'bg-warning' } },
+    { cols: 1, rows: 1, y: 0, x: 0, widget: { icon: null, class: null } },
+    { cols: 2, rows: 1, y: 0, x: 0, widget: { icon: null, class: 'bg-light text-dark' } },
+    { cols: 1, rows: 1, y: 0, x: 0, widget: { icon: null, class: null } },
+    { cols: 1, rows: 1, y: 0, x: 0, widget: { icon: null, class: 'bg-white text-dark' } },
+    { cols: 1, rows: 1, y: 0, x: 0, widget: { icon: null, class: null } },
+    { cols: 1, rows: 1, y: 0, x: 0, widget: { icon: null, class: 'bg-secondary' } },
+    { cols: 1, rows: 1, y: 0, x: 0, widget: { icon: null, class: null } },
+    { cols: 1, rows: 1, y: 0, x: 0, widget: { icon: null, class: 'bg-danger' } }
+  ]
 };
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+export const environment = {
+  production: false,
+  dashboardConfig
+};

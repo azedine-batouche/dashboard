@@ -13,8 +13,7 @@
     "test:cover": "rm -rf ./coverage && ng test --no-watch --code-coverage",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build:gh-pages:test1": "ng build -c=test --output-path=gh-pages/test1/ --base-href=/dashboard/test1/",
-    "pretty-quick": "pretty-quick",
-    "pwa": "http-server ./gh-pages/test1 -p 9005"
+    "pretty-quick": "pretty-quick"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +25,7 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
+    "angular-gridster2": "^8.3.0",
     "bootstrap": "^4.4.1",
     "bourbon": "^6.0.0",
     "font-awesome": "^4.7.0",
@@ -63,8 +63,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3",
-    "autoprefixer": "^ 6.5.4 "
+    "typescript": "~3.5.3"
   },
   "husky": {
     "hooks": {
