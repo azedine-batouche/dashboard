@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { GridsterConfig } from 'angular-gridster2';
+import { DashboardGridsterConfigService } from './dashboard-gridster-config.service';
+import { environment } from 'src/environments/environment';
+import { DashboardGridsterItem } from './interfaces/dashboard-gridster-item';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  constructor() {}
+  config: GridsterConfig;
+  items: Array<DashboardGridsterItem>;
 
-  ngOnInit() {}
+  constructor(private dashboardGridsterConfigService: DashboardGridsterConfigService) {}
+
+  ngOnInit() {
+    this.config = this.dashboardGridsterConfigService.getConfig();
+    this.items = environment.dashboardConfig.items;
+  }
 }

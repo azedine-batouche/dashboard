@@ -22,7 +22,7 @@ script:
 
 after_success:
   - npm run coveralls
-  - export NODE_ENV=test1 && npm run build:gh-pages:test1
+  - export NODE_ENV=test && npm run build:gh-pages:test1
 
 deploy:
   provider: pages
