@@ -13,8 +13,7 @@
     "test:cover": "rm -rf ./coverage && ng test --no-watch --code-coverage",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build:gh-pages:test1": "ng build -c=test --output-path=gh-pages/test1/ --base-href=/dashboard/test1/",
-    "pretty-quick": "pretty-quick",
-    "pwa": "http-server ./gh-pages/test1 -p 9005"
+    "pretty-quick": "pretty-quick"
   },
   "private": true,
   "dependencies": {
