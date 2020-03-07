@@ -1,0 +1,12 @@
+import { TestBed } from '@angular/core/testing';
+
+import { GiphyDataService } from './giphy-data.service';
+
+describe('GiphyDataService', () => {
+  beforeEach(() => TestBed.configureTestingModule({}));
+
+  it('should be created', () => {
+    const service: GiphyDataService = TestBed.get(GiphyDataService);
+    expect(service).toBeTruthy();
+  });
+});

@@ -1,0 +1,25 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { WidgetFacebookComponent } from './widget-facebook.component';
+
+describe('WidgetFacebookComponent', () => {
+  let component: WidgetFacebookComponent;
+  let fixture: ComponentFixture<WidgetFacebookComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ WidgetFacebookComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(WidgetFacebookComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

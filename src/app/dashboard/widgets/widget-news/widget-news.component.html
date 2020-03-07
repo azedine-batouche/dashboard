@@ -1,0 +1,56 @@
+<div
+  *ngIf="listArticle && !errorNews"
+  id="carouselExampleSlidesOnly"
+  class="carousel slide"
+  data-ride="carousel"
+  data-interval="10000"
+>
+  <div class="d-block">
+    <h4 class="text-center text-danger">NEWS</h4>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" *ngIf="listArticle && mainArticle">
+      <div class="row ">
+        <div class="col-md-4">
+          <img
+            *ngIf="mainArticle.urlToImage"
+            class="p-2"
+            [src]="mainArticle.urlToImage"
+            onerror="this.src='./assets/imgs/unknow-news.jpg'"
+            width="250px"
+            height="250px"
+          />
+        </div>
+        <div class="col-md-8">
+          <h3 class="text-info">{{ mainArticle.title }}</h3>
+          <p class="text-secondary">{{ mainArticle.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item" *ngFor="let art of listArticle">
+      <div class="row">
+        <div class="col-md-4">
+          <img class="p-2" *ngIf="art.urlToImage" [src]="art.urlToImage" width="250px" height="250px" />
+        </div>
+        <div class="col-md-8">
+          <h3 class="text-info">{{ art.title }}</h3>
+          <p class="text-secondary">{{ art.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="lastUpdate" *ngIf="lastUpdate">
+    <small class="text-muted">{{ lastUpdate | async | timePipe }} </small>
+  </p>
+
+  <a href="https://newsapi.org/" target="_blank">Powered by NEWS API</a>
+</div>
+
+<div *ngIf="errorNews" class="error-container text-danger">
+  <div class="error-icon">
+    <i class="fa fa-exclamation-triangle"></i>
+  </div>
+  <div class="error-message">
+    <h6>{{ errorNews }}</h6>
+  </div>
+</div>
