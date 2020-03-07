@@ -1,13 +1,8 @@
 <gridster [options]="config">
-  <gridster-item [item]="item" *ngFor="let item of items; index as i">
-    <div class="item-container" [ngClass]="item.widget.class">
+  <gridster-item [item]="item" *ngFor="let item of items">
+    <div class="item-container" [ngClass]="item.widget.class" [ngStyle]="item.widget.style ? item.widget.style : null">
       <i class="bg-icon" [ngClass]="item.widget.icon"></i>
-      <div class="item-mock">
-        <div class="item-mock">
-          <h4>item {{ i + 1 }}</h4>
-          c: {{ item.cols }} r:{{ item.rows }}
-        </div>
-      </div>
+      <app-widget-container [data]="item"></app-widget-container>
     </div>
   </gridster-item>
 </gridster>

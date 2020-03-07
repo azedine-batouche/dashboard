@@ -1,0 +1,63 @@
+@import '../../../../sass/bootstrap-custom';
+$min-img-news-lg: 1500px;
+:host {
+  height: 100%;
+  width: 100%;
+  @media screen and (max-width: 1500px) {
+    .col-md-4 {
+      flex: 0 0 0%;
+      max-width: 0%;
+    }
+    img {
+      width: 0;
+      height: 0;
+    }
+    .col-md-8 {
+      margin: 8px;
+      flex: 0 0 99%;
+      max-width: 99%;
+      overflow: hidden;
+    }
+    p {
+      padding: 0px 5px;
+    }
+  }
+  > .carousel {
+    height: 100%;
+    padding: 5px;
+
+    > .carousel-item {
+      img {
+        height: 100% !important;
+        width: 100%;
+        border-radius: 8px;
+      }
+    }
+
+    a {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      font-size: 10px;
+    }
+
+    .lastUpdate {
+      position: absolute;
+      bottom: 10px;
+      right: 43%;
+    }
+  }
+
+  > .error-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > .error-icon {
+      margin-bottom: 0.5rem;
+      padding-right: 8px;
+    }
+  }
+}

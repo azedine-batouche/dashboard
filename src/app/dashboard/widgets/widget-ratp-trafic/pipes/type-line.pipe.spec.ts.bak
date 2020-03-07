@@ -1,0 +1,8 @@
+import { TypeLinePipe } from './type-line.pipe';
+
+describe('TypeLinePipe', () => {
+  it('create an instance', () => {
+    const pipe = new TypeLinePipe();
+    expect(pipe).toBeTruthy();
+  });
+});

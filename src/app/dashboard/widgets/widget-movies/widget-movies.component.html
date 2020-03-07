@@ -1,0 +1,36 @@
+<div class="d-block text-center text-danger ctn-title">
+  <h3>CINEMA</h3>
+</div>
+
+<div
+  *ngIf="lastMovies"
+  id="carouselExampleSlidesOnly"
+  class="carousel slide "
+  data-ride="carousel"
+  data-interval="10000"
+>
+  <div class="carousel-fade ">
+    <div class="carousel-item active" *ngIf="mainMovie">
+      <img *ngIf="mainMovie.poster_path" [src]="mainMovie.poster_path" width="100%" height="100%" />
+      <div class="ctn-movie-info text-white">
+        <h2>{{ mainMovie.title | uppercase }}</h2>
+        <p>Date de sortie: {{ mainMovie.release_date | date: 'EEEE dd MMMM yyyy' }}</p>
+      </div>
+    </div>
+    <div class="carousel-item" *ngFor="let movie of lastMovies">
+      <img *ngIf="movie.poster_path" [src]="movie.poster_path" width="100%" height="100%" />
+      <div class="ctn-movie-info text-white">
+        <h1>{{ movie.title | uppercase }}</h1>
+        <p>Date de sortie: {{ movie.release_date | date: 'EEEE dd MMMM yyyy' }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="errorMovie" class="error-container text-danger">
+  <div class="error-icon">
+    <i class="fa fa-exclamation-triangle"></i>
+  </div>
+  <div class="error-message">
+    <h6>{{ errorMovie }}</h6>
+  </div>
+</div>
