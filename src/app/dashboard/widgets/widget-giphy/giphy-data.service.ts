@@ -10,7 +10,7 @@ import { GiphyImage } from './interfaces/giphy-image';
 export class GiphyDataService {
   private GIPHY_API_KEY = 'CzIiwbzv3aRBHrT3NqFb2utk3qkNWyMz';
   private timer = timer(0, 600000); // 10 minutes + start now
-  private offset_max = 100;
+  private offsetMax = 100;
   private q: string;
 
   constructor(private http: HttpClient) {}
@@ -21,19 +21,19 @@ export class GiphyDataService {
   }
 
   private getGiphyImages(q: string): Observable<GiphyImage[]> {
-    const params = new HttpParams()
+    const param = new HttpParams()
       .set('q', q)
       .set('limit', '100')
       .set('rating', 'g')
-      .set('offset', (Math.floor(Math.random() * this.offset_max) + 1).toString())
+      .set('offset', (Math.floor(Math.random() * this.offsetMax) + 1).toString())
       .set('api_key', this.GIPHY_API_KEY);
 
     return this.http
-      .get('//api.giphy.com/v1/gifs/search', { params: params })
+      .get('//api.giphy.com/v1/gifs/search', { params: param })
       .pipe(map(response => this.mapDataFromApi(response)));
   }
   private mapDataFromApi(response: any | undefined): GiphyImage[] {
-    this.offset_max = response.pagination.total_count - 100;
+    this.offsetMax = response.pagination.total_count - 100;
 
     if (response.data.length === 0) {
       this.getGiphyImages(this.q);
@@ -41,10 +41,10 @@ export class GiphyDataService {
 
     const images = [];
 
-    for (let _i = 0; _i < response.data.length; _i++) {
-      const image: GiphyImage = response.data[_i].images.fixed_height;
+    for (const data of response.data) {
+      const image: GiphyImage = data.images.fixed_height;
 
-      //Add only landscape image
+      // Add only landscape image
       if (image.width > image.height) {
         images.push(image);
       }

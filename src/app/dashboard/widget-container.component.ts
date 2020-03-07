@@ -33,7 +33,7 @@ export class WidgetContainerComponent implements OnInit {
   }
 
   private setComponent(component: string) {
-    if (component == 'WidgetGiphyComponent') {
+    if (component === 'WidgetGiphyComponent') {
       return WidgetGiphyComponent;
     }
     return HelloWorldComponent;

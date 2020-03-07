@@ -19,7 +19,7 @@ export class DataParisService {
 
   private getCurrentData() {
     const params = new HttpParams().set('dataset', 'que-faire-a-paris-').set('exclude.category', 'Concerts');
-    let header = new HttpHeaders({
+    const header = new HttpHeaders({
       'Content-Type': 'application/json'
     });
     const hraders = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
