@@ -1,0 +1,31 @@
+<div class="d-block text-center p-1">
+  <h2>
+    <img src="../../../../assets/imgs/joker.png" width="30px" height="30px" />
+    JOKE
+    <img src="../../../../assets/imgs/joker.png" width="30px" height="30px" />
+  </h2>
+</div>
+<div *ngIf="joke" class="question sb4 text-info">
+  <p>{{ joke.question }}</p>
+</div>
+<div class="ctn-avatar">
+  <img src="../../../../assets/imgs/teacher.png" width="30px" height="30px" />
+  <span> ...</span>
+</div>
+<div *ngIf="timeShow && timeShow.getValue() > 5" class="d-block text-white text-center">
+  <h1>
+    <b>{{ timeShow.getValue() - 5 }}</b>
+  </h1>
+</div>
+<div *ngIf="joke && timeShow && timeShow.getValue() <= 5" class="answer sb1 text-info">
+  <p>{{ joke.answer }}</p>
+  <img src="../../../../assets/imgs/joke-happy.png" width="30px" height="30px" />
+  <mat-progress-bar
+    class="bar-progress"
+    mode="determinate"
+    value="{{ progressBarPourcente.getValue() }} "
+  ></mat-progress-bar>
+</div>
+<div class="attribute">
+  Icons made by:&nbsp;<a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
+</div>

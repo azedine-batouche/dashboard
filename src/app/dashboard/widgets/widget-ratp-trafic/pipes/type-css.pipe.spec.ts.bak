@@ -1,0 +1,8 @@
+import { TypeCssPipe } from './type-css.pipe';
+
+describe('TypeCssPipe', () => {
+  it('create an instance', () => {
+    const pipe = new TypeCssPipe();
+    expect(pipe).toBeTruthy();
+  });
+});

@@ -1,0 +1,38 @@
+<div id="test" class="ctn-title d-block text-center">
+  <h3><img src="../../../../assets/imgs/traffic-ratp.svg" width="35px" height="35px" /> RATP TRAFFIC</h3>
+  <hr class="bg-warning" />
+</div>
+<div id="carousel" *ngIf="metroTraffic" class="carousel slide m-3" data-ride="carousel" data-interval="7000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <span *ngIf="firstTrafficElt.badge === true" class="badge badge-pill  badge-primary">Normal</span>
+      <span *ngIf="firstTrafficElt.badge === false" class="badge badge-pill  badge-warning text-danger">Perturbé</span>
+      <h5>
+        <b>ligne : </b>
+        <span [ngStyle]="firstTrafficElt.line | typeCss">{{ firstTrafficElt.line | typeLine }}</span>
+        <span [ngStyle]="firstTrafficElt.line | lineRatpTag"> {{ firstTrafficElt.line }}</span>
+      </h5>
+      <hr class="bg-white" />
+      <p *ngIf="firstTrafficElt" class="{{ firstTrafficElt.message | messageColor }}">
+        <b> Message:</b> {{ firstTrafficElt.message }}
+      </p>
+    </div>
+    <div class="carousel-item" *ngFor="let traffic of metroTraffic">
+      <span *ngIf="traffic.badge === true" class="badge badge-pill  badge-primary">Normal</span>
+      <span *ngIf="traffic.badge === false" class="badge badge-pill  badge-warning text-danger">Perturbé</span>
+      <h5>
+        <b>ligne : </b>
+        <span [ngStyle]="traffic.line | typeCss">{{ traffic.line | typeLine }}</span>
+        <span [ngStyle]="traffic.line | lineRatpTag"> {{ traffic.line }}</span>
+      </h5>
+      <hr class="bg-white" />
+      <p *ngIf="traffic" class="{{ traffic.message | messageColor }}"><b> Message: </b> {{ traffic.message }}</p>
+    </div>
+  </div>
+</div>
+<div *ngIf="error" class="d-block text-center">
+  <h6>
+    <i class="fa fa-exclamation-triangle"></i>
+    <span>{{ error }}</span>
+  </h6>
+</div>

@@ -1,0 +1,41 @@
+:host {
+  width: 100%;
+  height: 100%;
+
+  > .ctn-title {
+    position: absolute;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    padding-top: 5px;
+    z-index: 1000;
+  }
+
+  > .carousel {
+    width: 100%;
+    height: 100%;
+    margin: 0 !important ;
+    padding: 0 !important;
+
+    > .carousel-fade {
+      width: 100%;
+      height: 100%;
+
+      > .carousel-item {
+        width: 100%;
+        height: 100%;
+
+        img {
+          padding: 0px !important;
+          margin: 0 !important;
+        }
+
+        > .ctn-movie-info {
+          position: absolute;
+          bottom: 5px;
+          left: 5px;
+        }
+      }
+    }
+  }
+}
