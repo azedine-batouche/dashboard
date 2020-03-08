@@ -35,7 +35,7 @@ export class WidgetContainerComponent implements OnInit {
     if (component === 'WidgetGiphyComponent') {
       return WidgetGiphyComponent;
     }
-    return ;
+    return;
   }
 
   ngOnInit() {
