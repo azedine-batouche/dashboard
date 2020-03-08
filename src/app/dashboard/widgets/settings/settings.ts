@@ -2,6 +2,8 @@ export const settings = {
   // General information:
   PATH_IMG_LOCAL: './assets/imgs/',
   LANG: 'fr',
+
+
   LANGUAGE: 'FR-fr',
 
   // Weather information:
@@ -30,4 +32,5 @@ export const settings = {
 
   // Paris event information
   API_PARIS_URL: 'http://opendata.paris.fr/api/records/1.0/search/?'
+
 };

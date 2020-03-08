@@ -2,7 +2,10 @@ import { Component, OnInit, ElementRef, SimpleChanges } from '@angular/core';
 import { DataTraficRatpService } from './data-trafic-ratp.service';
 import { HttpError } from '../../interfaces/http-error';
 import { RatpTraffic } from './interfaces/ratp-traffic';
+
 import { RatpField } from './interfaces/ratp-field.enum';
+
+
 
 @Component({
   selector: 'app-widget-ratp-trafic',
@@ -11,15 +14,20 @@ import { RatpField } from './interfaces/ratp-field.enum';
   providers: [DataTraficRatpService]
 })
 export class WidgetRatpTraficComponent implements OnInit {
+
+
   private metroDefine = 'M';
   private rerDefine = 'RER';
+
   protected error: HttpError;
   protected firstTrafficElt: RatpTraffic;
   protected metroTraffic: RatpTraffic[];
   private rerTraffic: RatpTraffic[];
+
   private alertBadge = false;
   private eltRef: ElementRef;
   defaultTraficMessage = "Trafic normal sur l'ensemble de la ligne.";
+
 
   constructor(private ratpTrafficService: DataTraficRatpService) {}
 
@@ -28,11 +36,13 @@ export class WidgetRatpTraficComponent implements OnInit {
       dataTraffic => this.selectDataTraffic(dataTraffic),
       error => {
         (this.error = error[RatpField.result]), console.log('ratp error: ' + JSON.stringify(error));
+
       }
     );
   }
 
   private selectDataTraffic(dataTraffic: any) {
+
     this.metroTraffic = dataTraffic[RatpField.result][RatpField.rers];
     this.metroTraffic = this.filterData(this.metroTraffic);
     dataTraffic[RatpField.result][RatpField.metros].forEach(metro => {
@@ -47,7 +57,9 @@ export class WidgetRatpTraficComponent implements OnInit {
 
   private filterData(data: any): RatpTraffic[] {
     data.forEach(rer => {
+
       const rerTag = rer;
+
       rerTag.type = this.rerDefine;
       rerTag.badge = this.alertBadgeDone(rerTag);
     });
@@ -61,7 +73,10 @@ export class WidgetRatpTraficComponent implements OnInit {
     return false;
   }
   private scrollCaroussel() {
+
+
     const carrousel = document.getElementById('carousel');
+
     if (carrousel) {
       carrousel.scrollIntoView(false);
     }
@@ -69,6 +84,7 @@ export class WidgetRatpTraficComponent implements OnInit {
 
   ngOnInit() {
     this.getTraffic();
+
     this.scrollCaroussel();
   }
 }

@@ -4,6 +4,7 @@ import { timer, forkJoin } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
 import { Movies } from './interfaces/movies';
 import { settings } from '../settings/settings';
+
 import { MoviesField } from './interfaces/movies-field.enum';
 
 @Injectable({
@@ -25,6 +26,7 @@ export class DataMoviesService {
   }
 
   private getListMovies() {
+
     const para = new HttpParams()
       .set('page', '2')
       .set('api_key', settings.MOVIES_API_KEY)
@@ -35,6 +37,7 @@ export class DataMoviesService {
       .set('api_key', settings.MOVIES_API_KEY)
       .set('language', settings.LANGUAGE);
     const b = this.http.get(settings.API_MOVIES_URL, { params: param }).pipe(map(data => this.mapDataApi(data)));
+
     return forkJoin([a, b]);
   }
 
@@ -47,6 +50,7 @@ export class DataMoviesService {
           tmpMovie.release_date = movie[MoviesField.release_date];
           if (movie[MoviesField.backdrop_path] !== null) {
             tmpMovie.poster_path = movie[MoviesField.backdrop_path];
+
           }
           this.listMovie.push(tmpMovie);
           tmpMovie = { title: '', release_date: '', overview: '', poster_path: '' };

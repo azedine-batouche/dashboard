@@ -19,8 +19,10 @@ export class WidgetJokeComponent implements OnInit {
   protected time: BehaviorSubject<number> = new BehaviorSubject(15);
   protected progressBarPourcente: BehaviorSubject<number> = new BehaviorSubject(100);
   protected progressBarBoolean: BehaviorSubject<true>;
+
   private restTime = 15;
   private progressBarInt = 100;
+
   a: any;
 
   constructor(private dataJokeService: DataJokeService) {}
