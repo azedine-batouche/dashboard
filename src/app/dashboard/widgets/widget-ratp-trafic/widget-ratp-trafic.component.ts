@@ -2,7 +2,9 @@ import { Component, OnInit, ElementRef, SimpleChanges } from '@angular/core';
 import { DataTraficRatpService } from './data-trafic-ratp.service';
 import { HttpError } from '../../interfaces/http-error';
 import { RatpTraffic } from './interfaces/ratp-traffic';
+
 import { RatpField } from './interfaces/ratp-field.enum';
+
 
 
 @Component({
@@ -13,6 +15,7 @@ import { RatpField } from './interfaces/ratp-field.enum';
 })
 export class WidgetRatpTraficComponent implements OnInit {
 
+
   private metroDefine = 'M';
   private rerDefine = 'RER';
 
@@ -20,6 +23,7 @@ export class WidgetRatpTraficComponent implements OnInit {
   protected firstTrafficElt: RatpTraffic;
   protected metroTraffic: RatpTraffic[];
   private rerTraffic: RatpTraffic[];
+
   private alertBadge = false;
   private eltRef: ElementRef;
   defaultTraficMessage = "Trafic normal sur l'ensemble de la ligne.";
@@ -38,11 +42,11 @@ export class WidgetRatpTraficComponent implements OnInit {
   }
 
   private selectDataTraffic(dataTraffic: any) {
+
     this.metroTraffic = dataTraffic[RatpField.result][RatpField.rers];
     this.metroTraffic = this.filterData(this.metroTraffic);
     dataTraffic[RatpField.result][RatpField.metros].forEach(metro => {
       const metroTag = metro;
-
       metroTag.type = this.metroDefine;
       metroTag.badge = this.alertBadgeDone(metroTag);
       this.metroTraffic.push(metroTag);
@@ -53,6 +57,7 @@ export class WidgetRatpTraficComponent implements OnInit {
 
   private filterData(data: any): RatpTraffic[] {
     data.forEach(rer => {
+
       const rerTag = rer;
 
       rerTag.type = this.rerDefine;
@@ -69,6 +74,7 @@ export class WidgetRatpTraficComponent implements OnInit {
   }
   private scrollCaroussel() {
 
+
     const carrousel = document.getElementById('carousel');
 
     if (carrousel) {
@@ -78,6 +84,7 @@ export class WidgetRatpTraficComponent implements OnInit {
 
   ngOnInit() {
     this.getTraffic();
+
     this.scrollCaroussel();
   }
 }

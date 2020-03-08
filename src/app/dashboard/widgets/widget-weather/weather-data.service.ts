@@ -13,6 +13,7 @@ import { WeatherField } from './interfaces/weather-field.enum';
 })
 export class WeatherDataService {
   private weather: Weather;
+
   private lon = '0';
   private lat = '0';
   private intervalWeather = 43200000; // interval set at 12h
@@ -33,6 +34,7 @@ export class WeatherDataService {
       enableHighAccuracy: true, // use gps to determine the position
       timeout: 3000, // wait 6 seconds to get the current position
       maximumAge: 1000 * 60 * 60 // save the position 1h in the cache browser
+
 
     };
     if (navigator.geolocation) {
@@ -59,12 +61,14 @@ export class WeatherDataService {
 
   private getCoordsThrewUrl(): void {
     this.http.get(settings.URL_GET_COORDS).subscribe((data: JSON) => {
+
       (this.lat = data[WeatherField.lat]), (this.lon = data[WeatherField.lon]);
 
     });
   }
 
   private getWeather() {
+
     const param = new HttpParams()
       .set('lat', this.lat)
       .set('lon', this.lon)
@@ -74,8 +78,8 @@ export class WeatherDataService {
       .set('lang', settings.LANG);
 
     return this.http
-      .get(settings.API_WEATHERS_URL, { params: param })
 
+      .get(settings.API_WEATHERS_URL, { params: param })
       .pipe(map(response => this.mapDataFormWeatherApi(response)));
   }
 
@@ -85,7 +89,6 @@ export class WeatherDataService {
     this.weather.name = data[WeatherField.name];
     this.weather.icon = this.getWeatherIcon(this.weather.icon);
     this.weather.temperature = Math.floor(data[WeatherField.main].temp);
-
     return this.weather;
   }
 

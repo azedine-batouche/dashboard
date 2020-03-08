@@ -3,6 +3,7 @@ export const settings = {
   PATH_IMG_LOCAL: './assets/imgs/',
   LANG: 'fr',
 
+
   LANGUAGE: 'FR-fr',
 
   // Weather information:

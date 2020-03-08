@@ -4,8 +4,8 @@ import { timer, forkJoin } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
 import { Movies } from './interfaces/movies';
 import { settings } from '../settings/settings';
-import { MoviesField } from './interfaces/movies-field.enum';
 
+import { MoviesField } from './interfaces/movies-field.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,6 @@ export class DataMoviesService {
   private INTERVAL_REFRESH: number = 1000 * 60 * 10; // 10 minutes;
   private listMovie: Movies[] = [];
   private nbPage = 3;
-
   data: any;
   constructor(private http: HttpClient) {}
 
@@ -27,12 +26,12 @@ export class DataMoviesService {
   }
 
   private getListMovies() {
+
     const para = new HttpParams()
       .set('page', '2')
       .set('api_key', settings.MOVIES_API_KEY)
       .set('language', settings.LANGUAGE);
     const a = this.http.get(settings.API_MOVIES_URL, { params: para }).pipe(map(data => this.mapDataApi(data)));
-
     const param = new HttpParams()
       .set('page', '4')
       .set('api_key', settings.MOVIES_API_KEY)

@@ -9,6 +9,7 @@ export class LineRatpTagPipe implements PipeTransform {
     const tagCss = { 'background-color': '', color: '', display: '', padding: '', 'border-radius': '', border: '' };
 
 
+
     // General css config
     tagCss.display = 'inline-block';
     tagCss['border-radius'] = '50%';

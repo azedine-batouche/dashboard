@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MessageColorPipe implements PipeTransform {
   transform(message: string): string {
+
     let messageColor = 'text-warning';
 
 

@@ -18,7 +18,9 @@ export class WidgetGiphyComponent implements OnInit {
   public image: GiphyImage;
   private images: GiphyImage[];
   private timer: any = null;
+
   private currentImageIndex = 0;
+
 
 
   @Input() data: DashboardGridsterItem;
