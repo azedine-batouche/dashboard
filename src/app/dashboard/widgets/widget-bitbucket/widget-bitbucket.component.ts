@@ -11,6 +11,7 @@ export class WidgetBitbucketComponent implements OnInit {
   charts: any;
   nbSupport = 25;
 
+
   constructor() {}
 
   @Input() data: DashboardGridsterItem;

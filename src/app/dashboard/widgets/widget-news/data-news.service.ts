@@ -4,13 +4,16 @@ import { timer } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
 import { News } from './interfaces/news';
 import { settings } from '../settings/settings';
+
 import { NewsField } from './interfaces/news-field.enum';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataNewsService {
   private refreshNews = 6000000; // 1h
+
   private news: News = { totalResults: 0, articles: [] };
 
   constructor(private http: HttpClient) {}
@@ -28,6 +31,7 @@ export class DataNewsService {
     this.news.totalResults = parseInt(news[NewsField.totalResults], 10);
     this.news.totalResults = news[NewsField.totalResults];
     this.news.articles = news[NewsField.articles];
+
     return this.news;
   }
 }

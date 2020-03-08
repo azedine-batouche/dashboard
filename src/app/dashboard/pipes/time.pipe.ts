@@ -10,7 +10,9 @@ export class TimePipe implements PipeTransform {
     const minuteInHour = 60;
     const minuteInDay = 1440;
     const nineMinute = 9;
+
     let printTime = "- à l'instant -";
+
     const timeValue = time;
 
     if (timeValue >= unitOfTime && timeValue < minuteInHour) {
@@ -22,6 +24,7 @@ export class TimePipe implements PipeTransform {
       printTime = '- il y a ' + hour + 'h' + minutes + 'min -';
     } else if (timeValue >= minuteInDay) {
       const days = Math.floor(timeValue / minuteInDay);
+
       printTime = days > unitOfTime ? '- il y a ' + days + ' jours' : '- il y a ' + days + ' jour';
     }
     return printTime;

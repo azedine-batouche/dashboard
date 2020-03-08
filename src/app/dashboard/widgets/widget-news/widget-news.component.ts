@@ -14,6 +14,7 @@ import { map } from 'rxjs/operators';
 })
 export class WidgetNewsComponent implements OnInit {
   private PATH_IMG = './assets/imgs/unknow-news.jpg';
+
   public updatedNews: Observable<number>;
   private currentNews: News;
   protected listArticle: Article[];

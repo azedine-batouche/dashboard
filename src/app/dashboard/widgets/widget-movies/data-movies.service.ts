@@ -6,6 +6,7 @@ import { Movies } from './interfaces/movies';
 import { settings } from '../settings/settings';
 import { MoviesField } from './interfaces/movies-field.enum';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +14,7 @@ export class DataMoviesService {
   private INTERVAL_REFRESH: number = 1000 * 60 * 10; // 10 minutes;
   private listMovie: Movies[] = [];
   private nbPage = 3;
+
   data: any;
   constructor(private http: HttpClient) {}
 
@@ -30,11 +32,13 @@ export class DataMoviesService {
       .set('api_key', settings.MOVIES_API_KEY)
       .set('language', settings.LANGUAGE);
     const a = this.http.get(settings.API_MOVIES_URL, { params: para }).pipe(map(data => this.mapDataApi(data)));
+
     const param = new HttpParams()
       .set('page', '4')
       .set('api_key', settings.MOVIES_API_KEY)
       .set('language', settings.LANGUAGE);
     const b = this.http.get(settings.API_MOVIES_URL, { params: param }).pipe(map(data => this.mapDataApi(data)));
+
     return forkJoin([a, b]);
   }
 
@@ -47,6 +51,7 @@ export class DataMoviesService {
           tmpMovie.release_date = movie[MoviesField.release_date];
           if (movie[MoviesField.backdrop_path] !== null) {
             tmpMovie.poster_path = movie[MoviesField.backdrop_path];
+
           }
           this.listMovie.push(tmpMovie);
           tmpMovie = { title: '', release_date: '', overview: '', poster_path: '' };

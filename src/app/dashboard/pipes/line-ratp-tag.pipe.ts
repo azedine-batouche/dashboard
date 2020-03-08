@@ -5,7 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class LineRatpTagPipe implements PipeTransform {
   transform(tag: any): any {
+
     const tagCss = { 'background-color': '', color: '', display: '', padding: '', 'border-radius': '', border: '' };
+
 
     // General css config
     tagCss.display = 'inline-block';

@@ -4,6 +4,7 @@ import { HttpError } from '../../interfaces/http-error';
 import { RatpTraffic } from './interfaces/ratp-traffic';
 import { RatpField } from './interfaces/ratp-field.enum';
 
+
 @Component({
   selector: 'app-widget-ratp-trafic',
   templateUrl: './widget-ratp-trafic.component.html',
@@ -11,8 +12,10 @@ import { RatpField } from './interfaces/ratp-field.enum';
   providers: [DataTraficRatpService]
 })
 export class WidgetRatpTraficComponent implements OnInit {
+
   private metroDefine = 'M';
   private rerDefine = 'RER';
+
   protected error: HttpError;
   protected firstTrafficElt: RatpTraffic;
   protected metroTraffic: RatpTraffic[];
@@ -21,6 +24,7 @@ export class WidgetRatpTraficComponent implements OnInit {
   private eltRef: ElementRef;
   defaultTraficMessage = "Trafic normal sur l'ensemble de la ligne.";
 
+
   constructor(private ratpTrafficService: DataTraficRatpService) {}
 
   private getTraffic() {
@@ -28,6 +32,7 @@ export class WidgetRatpTraficComponent implements OnInit {
       dataTraffic => this.selectDataTraffic(dataTraffic),
       error => {
         (this.error = error[RatpField.result]), console.log('ratp error: ' + JSON.stringify(error));
+
       }
     );
   }
@@ -37,6 +42,7 @@ export class WidgetRatpTraficComponent implements OnInit {
     this.metroTraffic = this.filterData(this.metroTraffic);
     dataTraffic[RatpField.result][RatpField.metros].forEach(metro => {
       const metroTag = metro;
+
       metroTag.type = this.metroDefine;
       metroTag.badge = this.alertBadgeDone(metroTag);
       this.metroTraffic.push(metroTag);
@@ -48,6 +54,7 @@ export class WidgetRatpTraficComponent implements OnInit {
   private filterData(data: any): RatpTraffic[] {
     data.forEach(rer => {
       const rerTag = rer;
+
       rerTag.type = this.rerDefine;
       rerTag.badge = this.alertBadgeDone(rerTag);
     });
@@ -61,7 +68,9 @@ export class WidgetRatpTraficComponent implements OnInit {
     return false;
   }
   private scrollCaroussel() {
+
     const carrousel = document.getElementById('carousel');
+
     if (carrousel) {
       carrousel.scrollIntoView(false);
     }
