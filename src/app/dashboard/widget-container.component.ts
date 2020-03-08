@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, ComponentFactoryResolver, ViewChild } from '@angular/core';
 import { DashboardGridsterItem } from './interfaces/dashboard-gridster-item';
 import { WidgetHostDirective } from './widget-host.directive';
-import { HelloWorldComponent } from './widgets/hello-world/hello-world.component';
 import { WidgetGiphyComponent } from './widgets/widget-giphy/widget-giphy.component';
 
 @Component({
@@ -39,7 +38,7 @@ export class WidgetContainerComponent implements OnInit {
 
       return WidgetGiphyComponent;
     }
-    return HelloWorldComponent;
+    return ;
   }
 
   ngOnInit() {
