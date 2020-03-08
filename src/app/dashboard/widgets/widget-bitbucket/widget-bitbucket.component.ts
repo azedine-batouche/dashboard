@@ -9,7 +9,8 @@ import { DashboardGridsterItem } from '../../interfaces/dashboard-gridster-item'
 })
 export class WidgetBitbucketComponent implements OnInit {
   charts: any;
-  nbSupport: number = 25;
+  nbSupport = 25;
+
 
   constructor() {}
 

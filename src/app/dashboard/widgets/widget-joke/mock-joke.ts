@@ -73,7 +73,7 @@ export const JOKES: Joke[] = [
   },
   {
     id: 15,
-    question: "ue se passe-t-il quand 2 poissons s'énervent ?",
+    question: "Que se passe-t-il quand 2 poissons s'énervent ?",
     answer: 'Le thon monte'
   },
   {
@@ -83,7 +83,7 @@ export const JOKES: Joke[] = [
   },
   {
     id: 17,
-    question: "QPourquoi c'est pénible de regarder du patinage artistique ?",
+    question: "Pourquoi c'est pénible de regarder du patinage artistique ?",
     answer: 'Parce que le patin agace'
   },
   {
@@ -103,7 +103,7 @@ export const JOKES: Joke[] = [
   },
   {
     id: 21,
-    question: '"Qu\'est-ce qui est pire que le vent ?',
+    question: "Qu'est-ce qui est pire que le vent ?",
     answer: 'Un vampire'
   },
   {
