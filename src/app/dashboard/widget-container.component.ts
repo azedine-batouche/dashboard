@@ -38,7 +38,7 @@ export class WidgetContainerComponent implements OnInit {
 
       return WidgetGiphyComponent;
     }
-    return ;
+    return;
   }
 
   ngOnInit() {
