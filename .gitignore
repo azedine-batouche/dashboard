@@ -47,3 +47,6 @@ Thumbs.db
 
 # Test folder
 /gh-pages/test*
+
+# hide all apikeys
+.env

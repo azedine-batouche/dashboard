@@ -2,5 +2,35 @@ export const settings = {
   // General information:
   PATH_IMG_LOCAL: './assets/imgs/',
   LANG: 'fr',
-  LANGUAGE: 'FR-fr'
+
+
+  LANGUAGE: 'FR-fr',
+
+  // Weather information:
+  API_WEATHERS_URL: '//api.openweathermap.org/data/2.5/weather?',
+  WEATHERS_API_KEY: '',
+  URL_GET_COORDS: 'http://ip-api.com/json/',
+
+  // Movie information:
+  API_MOVIES_URL: 'https://api.themoviedb.org/3/movie/upcoming?',
+  MOVIES_API_KEY: '',
+  HTTP_PATH_IMG: 'https://image.tmdb.org/t/p/w500',
+
+  // Github information
+  API_GITHUB_URL: 'https://api.github.com/users/batouche-dev/repos',
+
+  // News Information
+  API_NEWS_URL: 'https://newsapi.org/v2/top-headlines?',
+  API_NEWS_KEY: '',
+
+  // Joke information
+  API_JOKE_URL: 'https://blague.xyz/api/joke/random',
+  API_JOKE_KEY: '',
+
+  // Ratp Information traffic
+  API_RATP_URL: 'https://api-ratp.pierre-grimaud.fr/v4/traffic',
+
+  // Paris event information
+  API_PARIS_URL: 'http://opendata.paris.fr/api/records/1.0/search/?'
+
 };
