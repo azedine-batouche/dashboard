@@ -1,20 +1,18 @@
 @import '../../../../sass/variables';
 :host {
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  display: table;
+  // width: 100%;
+  // align-items: center;
+  // justify-content: center;
+  // display: block;
   > .ctn-code-dashboard {
-    height: 100%;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-
+    // height: 100%;
+    // text-align: center;
+    // vertical-align: middle;
     h1 {
       font-size: 50px !important;
     }
     a {
+      display: block;
       text-decoration: none;
       color: #fff;
     }
