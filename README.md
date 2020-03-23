@@ -7,29 +7,62 @@
 
 # Dashboard
 
+this project is a dashboard who display different information from api and you can custom all of them as you like. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Screenshop 
+You can see the final result of the project who look like this:
 
-## Code scaffolding
+![Getting Started](../dashboard/dist/dashboard/assets/imgs/../../../../src/assets/imgs/Capture&#32;d’écran&#32;2020-03-21&#32;à&#32;21.46.48.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Setup
+first clone the porject in your workspace with this command line
 
-## Running unit tests
+```
+git clone https://github.com/batouche-dev/dashboard.git
+```
 
-https://github.com/batouche-dev/dashboard.git
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+then go inside the folder 'dashboard': 
+```
+cd dashboard
+```
 
-## Running end-to-end tests
+## API KEY
+go the settings file under this path
+```
+src/app/dashboard/widgets/settings/settings.ts
+```
+then add you own apikey on each varaibles.
+list of a few api
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## List of website thats you can get some api Key  
 
-## Further help
+[Weather](https://openweathermap.org/api): api key for weather widget
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[Movies](https://api.themoviedb.org/3/movie): api key for movies widget
+
+[Joke](https://blague.xyz/api/joke): api key for joke widget
+
+[Giphy](https://developers.giphy.com/): api key for giphy widget
+
+[News](https://newsapi.org/v2/): api key for news widget
+
+
+## Launch
+you have different envirement that you can use it, or start like this: 
+```
+ng serve 
+```
+
+
+## Note
+this project run with theses versions of tools:
+```
+npm: 6.13.7
+angular: 8.2.2
+Node: 13.6
+```
