@@ -7,39 +7,42 @@
 
 # Dashboard
 
-this project is a dashboard who display different information from api and you can custom all of them as you like. 
+this project is a dashboard who display different information from api and you can custom all of them as you like.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
 
+## Screenshop
 
-## Screenshop 
 You can see the final result of the project who look like this:
 
-![Getting Started](../dashboard/dist/dashboard/assets/imgs/../../../../src/assets/imgs/Capture&#32;d’écran&#32;2020-03-21&#32;à&#32;21.46.48.png)
-
-
+![Getting Started](<../dashboard/dist/dashboard/assets/imgs/../../../../src/assets/imgs/Capture d’écran 2020-03-21 à 21.46.48.png>)
 
 ## Setup
+
 first clone the porject in your workspace with this command line
 
 ```
 git clone https://github.com/batouche-dev/dashboard.git
 ```
 
-then go inside the folder 'dashboard': 
+then go inside the folder 'dashboard':
+
 ```
 cd dashboard
 ```
 
 ## API KEY
+
 go the settings file under this path
+
 ```
 src/app/dashboard/widgets/settings/settings.ts
 ```
+
 then add you own apikey on each varaibles.
 list of a few api
 
-## List of website thats you can get some api Key  
+## List of website thats you can get some api Key
 
 [Weather](https://openweathermap.org/api): api key for weather widget
 
@@ -51,16 +54,18 @@ list of a few api
 
 [News](https://newsapi.org/v2/): api key for news widget
 
-
 ## Launch
-you have different envirement that you can use it, or start like this: 
-```
-ng serve 
-```
 
+you have different envirement that you can use it, or start like this:
+
+```
+ng serve
+```
 
 ## Note
+
 this project run with theses versions of tools:
+
 ```
 npm: 6.13.7
 angular: 8.2.2
