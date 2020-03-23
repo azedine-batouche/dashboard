@@ -13,7 +13,6 @@ import { map } from 'rxjs/operators';
   providers: [DataNewsService]
 })
 export class WidgetNewsComponent implements OnInit {
-
   private PATH_IMG = './assets/imgs/unknow-news.jpg';
 
   public updatedNews: Observable<number>;

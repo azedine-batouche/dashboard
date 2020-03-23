@@ -5,8 +5,6 @@ import { RatpTraffic } from './interfaces/ratp-traffic';
 
 import { RatpField } from './interfaces/ratp-field.enum';
 
-
-
 @Component({
   selector: 'app-widget-ratp-trafic',
   templateUrl: './widget-ratp-trafic.component.html',
@@ -14,8 +12,6 @@ import { RatpField } from './interfaces/ratp-field.enum';
   providers: [DataTraficRatpService]
 })
 export class WidgetRatpTraficComponent implements OnInit {
-
-
   private metroDefine = 'M';
   private rerDefine = 'RER';
 
@@ -28,7 +24,6 @@ export class WidgetRatpTraficComponent implements OnInit {
   private eltRef: ElementRef;
   defaultTraficMessage = "Trafic normal sur l'ensemble de la ligne.";
 
-
   constructor(private ratpTrafficService: DataTraficRatpService) {}
 
   private getTraffic() {
@@ -36,13 +31,11 @@ export class WidgetRatpTraficComponent implements OnInit {
       dataTraffic => this.selectDataTraffic(dataTraffic),
       error => {
         (this.error = error[RatpField.result]), console.log('ratp error: ' + JSON.stringify(error));
-
       }
     );
   }
 
   private selectDataTraffic(dataTraffic: any) {
-
     this.metroTraffic = dataTraffic[RatpField.result][RatpField.rers];
     this.metroTraffic = this.filterData(this.metroTraffic);
     dataTraffic[RatpField.result][RatpField.metros].forEach(metro => {
@@ -57,7 +50,6 @@ export class WidgetRatpTraficComponent implements OnInit {
 
   private filterData(data: any): RatpTraffic[] {
     data.forEach(rer => {
-
       const rerTag = rer;
 
       rerTag.type = this.rerDefine;
@@ -73,8 +65,6 @@ export class WidgetRatpTraficComponent implements OnInit {
     return false;
   }
   private scrollCaroussel() {
-
-
     const carrousel = document.getElementById('carousel');
 
     if (carrousel) {

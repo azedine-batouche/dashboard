@@ -12,8 +12,6 @@ export class WidgetBitbucketComponent implements OnInit {
 
   nbSupport = 25;
 
-
-
   constructor() {}
 
   @Input() data: DashboardGridsterItem;

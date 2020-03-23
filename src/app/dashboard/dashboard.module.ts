@@ -26,7 +26,6 @@ import { LineRatpTagPipe } from './pipes/line-ratp-tag.pipe';
 import { TypeLinePipe } from './widgets/widget-ratp-trafic/pipes/type-line.pipe';
 import { TypeCssPipe } from './widgets/widget-ratp-trafic/pipes/type-css.pipe';
 import { MatProgressBarModule } from '@angular/material';
-import { WidgetParisComponent } from './widgets/widget-paris/widget-paris.component';
 
 @NgModule({
   declarations: [
@@ -42,15 +41,14 @@ import { WidgetParisComponent } from './widgets/widget-paris/widget-paris.compon
     WidgetDashboardSourceComponent,
     WidgetFacebookComponent,
     WidgetBitbucketComponent,
+    WidgetFacebookComponent,
     TimePipe,
     WidgetJokeComponent,
     WidgetRatpTraficComponent,
     MessageColorPipe,
     LineRatpTagPipe,
     TypeLinePipe,
-    TypeCssPipe,
-    WidgetParisComponent,
-    WidgetParisComponent
+    TypeCssPipe
   ],
   imports: [
     CommonModule,
@@ -74,8 +72,7 @@ import { WidgetParisComponent } from './widgets/widget-paris/widget-paris.compon
     WidgetFacebookComponent,
     WidgetBitbucketComponent,
     WidgetJokeComponent,
-    WidgetRatpTraficComponent,
-    WidgetParisComponent
+    WidgetRatpTraficComponent
   ]
 })
 export class DashboardModule {}

@@ -9,7 +9,7 @@ import { WidgetDashboardSourceComponent } from 'src/app/dashboard/widgets/widget
 import { WidgetBitbucketComponent } from 'src/app/dashboard/widgets/widget-bitbucket/widget-bitbucket.component';
 import { WidgetJokeComponent } from 'src/app/dashboard/widgets/widget-joke/widget-joke.component';
 import { WidgetRatpTraficComponent } from 'src/app/dashboard/widgets/widget-ratp-trafic/widget-ratp-trafic.component';
-import { WidgetParisComponent } from 'src/app/dashboard/widgets/widget-paris/widget-paris.component';
+import { WidgetFacebookComponent } from 'src/app/dashboard/widgets/widget-facebook/widget-facebook.component';
 
 const dashboardConfig: DashboardConfig = {
   items: [
@@ -31,8 +31,8 @@ const dashboardConfig: DashboardConfig = {
       y: 0,
       x: 1,
       widget: {
-        component: WidgetParisComponent,
-        icon: 'fa fa-ravelry',
+        component: WidgetFacebookComponent,
+        icon: 'fa fa-thumbs-up',
         class: 'null',
         style: { 'background-color': '#0085ad' }
       }

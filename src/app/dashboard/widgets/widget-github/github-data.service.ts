@@ -10,8 +10,6 @@ import { settings } from '../settings/settings';
   providedIn: 'root'
 })
 export class GithubDataService {
-
-
   private refreshGitHubTime = 86400000;
   private githubInfo: Github = { author: '', avatar: '', repo: [] };
   private ownerField = 'owner';
@@ -38,11 +36,8 @@ export class GithubDataService {
   }
 
   private mapDataGithub(data: any): Github {
-
-
     this.githubInfo.author = data[0][this.ownerField].login;
     this.githubInfo.avatar = data[0][this.ownerField].avatar_url;
-r
 
     data.forEach(repos => {
       this.repository.name = repos.name;
