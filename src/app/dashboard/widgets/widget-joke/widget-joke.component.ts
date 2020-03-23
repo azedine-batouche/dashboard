@@ -20,10 +20,9 @@ export class WidgetJokeComponent implements OnInit {
   protected progressBarPourcente: BehaviorSubject<number> = new BehaviorSubject(100);
   protected progressBarBoolean: BehaviorSubject<true>;
 
+  protected countInit = 5;
   private restTime = 15;
   private progressBarInt = 100;
-
-  a: any;
 
   constructor(private dataJokeService: DataJokeService) {}
 
@@ -31,21 +30,6 @@ export class WidgetJokeComponent implements OnInit {
 
   private getJokeData(): Joke {
     return (this.joke = this.dataJokeService.getJoke());
-  }
-
-  intervals() {
-    return interval(200)
-      .pipe(map(() => (this.progressBarInt -= 1)))
-      .subscribe(time => {
-        this.progressBarPourcente.next(time), console.log('time:' + this.progressBarPourcente.getValue());
-      });
-  }
-
-  private progressbartime() {
-    this.a = timer(10000, 14000)
-      .pipe(map(() => this.intervals()))
-      .subscribe();
-    timer(14000, 24000).pipe(map(() => this.a.unsubscrible()));
   }
 
   ngOnInit() {
@@ -57,7 +41,7 @@ export class WidgetJokeComponent implements OnInit {
     timer(0, 1000)
       .pipe(map(() => (this.restTime -= 1)))
       .subscribe(displaySecond => {
-        this.timeShow.next(displaySecond), this.progressbartime();
+        this.timeShow.next(displaySecond);
       });
   }
 }

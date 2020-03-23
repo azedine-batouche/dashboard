@@ -21,8 +21,6 @@ export class WidgetGiphyComponent implements OnInit {
 
   private currentImageIndex = 0;
 
-
-
   @Input() data: DashboardGridsterItem;
 
   constructor(private giphyDataService: GiphyDataService) {}

@@ -14,17 +14,13 @@
 </div>
 <div *ngIf="timeShow && timeShow.getValue() > 5" class="d-block text-white text-center">
   <h1>
-    <b>{{ timeShow.getValue() - 5 }}</b>
+    <b>{{ timeShow.getValue() - countInit }}</b>
   </h1>
 </div>
 <div *ngIf="joke && timeShow && timeShow.getValue() <= 5" class="answer sb1 text-info">
   <p>{{ joke.answer }}</p>
   <img src="../../../../assets/imgs/joke-happy.png" width="30px" height="30px" />
-  <mat-progress-bar
-    class="bar-progress"
-    mode="determinate"
-    value="{{ progressBarPourcente.getValue() }} "
-  ></mat-progress-bar>
+  <mat-progress-bar class="bar-progress" mode="determinate" value="{{ timeShow.getValue() * 20 }} "></mat-progress-bar>
 </div>
 <div class="attribute">
   Icons made by:&nbsp;<a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>

@@ -7,7 +7,6 @@ import { settings } from '../settings/settings';
 import { imgExtension } from '../settings/imgExtension';
 import { WeatherField } from './interfaces/weather-field.enum';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +16,6 @@ export class WeatherDataService {
   private lon = '0';
   private lat = '0';
   private intervalWeather = 43200000; // interval set at 12h
-
 
   constructor(private http: HttpClient) {}
 
@@ -34,8 +32,6 @@ export class WeatherDataService {
       enableHighAccuracy: true, // use gps to determine the position
       timeout: 3000, // wait 6 seconds to get the current position
       maximumAge: 1000 * 60 * 60 // save the position 1h in the cache browser
-
-
     };
     if (navigator.geolocation) {
       navigator.geolocation.watchPosition(
@@ -61,14 +57,11 @@ export class WeatherDataService {
 
   private getCoordsThrewUrl(): void {
     this.http.get(settings.URL_GET_COORDS).subscribe((data: JSON) => {
-
       (this.lat = data[WeatherField.lat]), (this.lon = data[WeatherField.lon]);
-
     });
   }
 
   private getWeather() {
-
     const param = new HttpParams()
       .set('lat', this.lat)
       .set('lon', this.lon)
@@ -84,7 +77,6 @@ export class WeatherDataService {
   }
 
   private mapDataFormWeatherApi(data: any | undefined): Weather {
-
     this.weather = data[WeatherField.weather][0];
     this.weather.name = data[WeatherField.name];
     this.weather.icon = this.getWeatherIcon(this.weather.icon);
