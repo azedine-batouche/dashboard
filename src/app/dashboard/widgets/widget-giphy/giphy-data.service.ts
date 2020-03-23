@@ -3,12 +3,12 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, timer } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { GiphyImage } from './interfaces/giphy-image';
+import { settings } from '../settings/settings';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GiphyDataService {
-  private GIPHY_API_KEY = 'CzIiwbzv3aRBHrT3NqFb2utk3qkNWyMz';
   private timer = timer(0, 600000); // 10 minutes + start now
   private offsetMax = 100;
   private q: string;
@@ -26,7 +26,7 @@ export class GiphyDataService {
       .set('limit', '100')
       .set('rating', 'g')
       .set('offset', (Math.floor(Math.random() * this.offsetMax) + 1).toString())
-      .set('api_key', this.GIPHY_API_KEY);
+      .set('api_key', settings.GIPHY_API_KEY);
 
     return this.http
       .get('//api.giphy.com/v1/gifs/search', { params: param })

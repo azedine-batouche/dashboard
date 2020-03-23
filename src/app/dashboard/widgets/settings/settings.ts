@@ -25,5 +25,8 @@ export const settings = {
   API_JOKE_KEY: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 
   // Ratp Information traffic
-  API_RATP_URL: 'https://api-ratp.pierre-grimaud.fr/v4/traffic'
+  API_RATP_URL: 'https://api-ratp.pierre-grimaud.fr/v4/traffic',
+
+  // API GIPHY information
+   GIPHY_API_KEY: 'XXXXXXXXXXXXXXXXX'
 };
