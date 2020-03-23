@@ -28,5 +28,5 @@ export const settings = {
   API_RATP_URL: 'https://api-ratp.pierre-grimaud.fr/v4/traffic',
 
   // API GIPHY information
-   GIPHY_API_KEY: 'XXXXXXXXXXXXXXXXX'
+  GIPHY_API_KEY: 'XXXXXXXXXXXXXXXXX'
 };
