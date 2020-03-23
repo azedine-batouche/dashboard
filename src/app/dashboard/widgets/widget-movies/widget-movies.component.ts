@@ -2,9 +2,10 @@ import { Component, OnInit, Input, LOCALE_ID } from '@angular/core';
 import { DataMoviesService } from './data-movies.service';
 import { DashboardGridsterItem } from '../../interfaces/dashboard-gridster-item';
 import { Movies } from './interfaces/movies';
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, JsonPipe } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { settings } from '../settings/settings';
+import { tap, map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-widget-movies',
@@ -14,7 +15,7 @@ import { settings } from '../settings/settings';
 })
 export class WidgetMoviesComponent implements OnInit {
   protected lastMovies: Movies[];
-  protected mainMovie: Movies;
+  protected mainMovie: Movies = { title: '', poster_path: '', overview: '', release_date: '' };
   protected errorMovie: string;
 
   @Input() data: DashboardGridsterItem;
@@ -34,9 +35,8 @@ export class WidgetMoviesComponent implements OnInit {
     }
   }
 
-  private filterData(data: any | undefined) {
-    this.lastMovies = data[0];
-    this.lastMovies.concat(data[1]);
+  private displayData(data: any) {
+    this.lastMovies = data;
     this.checkMovieImage(this.lastMovies);
     this.mainMovie = this.lastMovies[0]; // set the first movie
     this.lastMovies.shift(); // delete first movie into the list movies
@@ -46,8 +46,9 @@ export class WidgetMoviesComponent implements OnInit {
     registerLocaleData(localeFr, 'fr-FR');
     this.dataMovieService.getMovies().subscribe(
       data => {
-        this.filterData(data);
+        this.displayData(data);
       },
+
       error => (this.errorMovie = error)
     );
   }
