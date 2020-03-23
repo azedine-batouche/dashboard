@@ -13,7 +13,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Screenshop
 
-
 You can see the final result of the project who look like this:
 
 ![Getting Started](<../dashboard/dist/dashboard/assets/imgs/../../../../src/assets/imgs/Capture d’écran 2020-03-21 à 21.46.48.png>)
