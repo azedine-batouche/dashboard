@@ -15,7 +15,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 You can see the final result of the project who look like this:
 
-![](../dashboard/dist/dashboard/assets/imgs/../../../../src/assets/imgs/screenshot.png)
+![](/src/assets/imgs/screenshot.png )
 
 ## Setup
 
